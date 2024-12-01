@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barzi Fitness Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Barzi Fitness Tracker</h1>
+        <p>Your journey to fitness, faith, and self-improvement starts here.</p>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#workout-tracker">Workout Tracker</a></li>
+            <li><a href="#progress-diary">Progress Diary</a></li>
+            <li><a href="#islamic-tools">Islamic Tools</a></li>
+            <li><a href="#assistant">Assistant</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section">
+        <h2>Dashboard</h2>
+        <div class="progress">
+            <div class="progress-item">
+                <p>Workouts Completed</p>
+                <div class="progress-bar" data-progress="70">70%</div>
+            </div>
+            <div class="progress-item">
+                <p>Calories Logged</p>
+                <div class="progress-bar" data-progress="50">50%</div>
+            </div>
+            <div class="progress-item">
+                <p>Daily Prayers</p>
+                <div class="progress-bar" data-progress="100">100%</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workout Tracker Section -->
+    <section id="workout-tracker" class="section">
+        <h2>Workout Tracker</h2>
+        <ul class="workout-list">
+            <li>
+                <span>Hip Thrusts</span>
+                <button class="complete-button">Mark as Complete</button>
+            </li>
+            <li>
+                <span>Planks</span>
+                <button class="complete-button">Mark as Complete</button>
+            </li>
+            <li>
+                <span>Deadlifts</span>
+                <button class="complete-button">Mark as Complete</button>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Progress Diary Section -->
+    <section id="progress-diary" class="section">
+        <h2>Progress Diary</h2>
+        <form>
+            <label for="calories">Calories Consumed:</label>
+            <input type="number" id="calories" name="calories">
+
+            <label for="progress-photo">Upload Progress Photo:</label>
+            <input type="file" id="progress-photo" name="progress-photo">
+
+            <label for="diary-entry">Diary Entry:</label>
+            <textarea id="diary-entry" name="diary-entry" rows="4" cols="50"></textarea>
+
+            <button type="submit">Save Entry</button>
+        </form>
+    </section>
+
+    <!-- Islamic Tools Section -->
+    <section id="islamic-tools" class="section">
+        <h2>Islamic Tools</h2>
+        <div class="prayer-times">
+            <p>Fajr: 5:30 AM</p>
+            <p>Dhuhr: 12:15 PM</p>
+            <p>Asr: 3:45 PM</p>
+            <p>Maghrib: 5:50 PM</p>
+            <p>Isha: 7:20 PM</p>
+        </div>
+        <div class="qibla-tracker">
+            <p>Qibla Direction: <span id="qibla">N/A</span></p>
+        </div>
+    </section>
+
+    <!-- Assistant Section -->
+    <section id="assistant" class="section">
+        <h2>Personal Assistant</h2>
+        <div class="chatbox">
+            <div class="chat-messages">
+                <p class="message bot">Hello! How can I support you today?</p>
+            </div>
+            <form class="chat-form">
+                <input type="text" id="user-message" placeholder="Type your message here...">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Barzi Fitness Tracker. All rights reserved.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
 
