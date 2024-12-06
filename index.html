@@ -66,12 +66,13 @@
             text-align: center;
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
             cursor: pointer;
-            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
         }
 
         .section-icon:hover {
             background-color: #b87333; /* Copper orange hover effect */
-            transform: scale(1.1); /* Slight zoom on hover */
+            transform: scale(1.1) rotate(10deg); /* Zoom and rotate on hover */
+            color: white; /* Change text and icon color */
         }
 
         .section-icon p {
@@ -84,6 +85,11 @@
             font-size: 36px;
             color: #b87333; /* Copper orange icon color */
             margin-bottom: 10px;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .section-icon:hover i {
+            color: white; /* Icon turns white on hover */
         }
 
         footer {
@@ -102,7 +108,7 @@
     <!-- Header Section -->
     <header class="header">
         <h1>Barzi Fitness Tracker</h1>
-        <p>Your journey to fitness, faith, and self-improvement starts here.</p>
+        <p>Did Allah ever say no once?.</p>
     </header>
 
     <!-- Navigation Section -->
