@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a; /* Sporty black background */
+            background-color: #000000; /* Black background */
             color: #ffffff; /* White text for contrast */
         }
 
@@ -21,7 +21,7 @@
         }
 
         .navbar {
-            background-color: #333333;
+            background-color: #000000; /* Black navbar */
             padding: 10px;
             text-align: center;
         }
@@ -55,7 +55,7 @@
         }
 
         .section-icon {
-            background-color: #2c2c2c; /* Dark gray for sections */
+            background-color: #000000; /* Black section background */
             border-radius: 50%; /* Make it circular */
             width: 150px;
             height: 150px;
@@ -64,7 +64,7 @@
             justify-content: center;
             margin: 10px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
             cursor: pointer;
             transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
         }
@@ -80,8 +80,14 @@
             font-weight: bold;
         }
 
+        .section-icon i {
+            font-size: 36px;
+            color: #b87333; /* Copper orange icon color */
+            margin-bottom: 10px;
+        }
+
         footer {
-            background-color: #333333;
+            background-color: #000000; /* Black footer */
             text-align: center;
             padding: 10px;
             position: relative;
@@ -89,6 +95,8 @@
             width: 100%;
         }
     </style>
+    <!-- Add Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -104,26 +112,31 @@
             <li><a href="#workout-tracker">Workout Tracker</a></li>
             <li><a href="#progress-diary">Progress Diary</a></li>
             <li><a href="#islamic-tools">Islamic Tools</a></li>
-            <li><a href="#assistant">Assistant</a></li>
+            <li><a href="#assistant">I'm Here</a></li>
         </ul>
     </nav>
 
     <!-- Section Icons -->
     <div class="section-container">
         <div class="section-icon" id="dashboard-icon">
+            <i class="fas fa-chart-line"></i>
             <p>Dashboard</p>
         </div>
         <div class="section-icon" id="workout-icon">
+            <i class="fas fa-dumbbell"></i>
             <p>Workouts</p>
         </div>
         <div class="section-icon" id="diary-icon">
+            <i class="fas fa-heart"></i>
             <p>Diary</p>
         </div>
         <div class="section-icon" id="islamic-icon">
+            <i class="fas fa-mosque"></i>
             <p>Islamic Tools</p>
         </div>
         <div class="section-icon" id="assistant-icon">
-            <p>Assistant</p>
+            <i class="fas fa-headset"></i>
+            <p>I'm Here</p>
         </div>
     </div>
 
