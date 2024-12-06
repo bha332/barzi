@@ -24,6 +24,9 @@
             background-color: #000000; /* Black navbar */
             padding: 10px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .navbar ul {
@@ -47,6 +50,31 @@
             color: #b87333; /* Copper orange hover effect */
         }
 
+        .section {
+            height: 100vh; /* Full height of the viewport */
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #1a1a1a; /* Dark gray for sections */
+            border-bottom: 2px solid #b87333; /* Separator effect */
+        }
+
+        .section:nth-child(even) {
+            background-color: #000000; /* Alternate black sections */
+        }
+
+        footer {
+            background-color: #000000; /* Black footer */
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Icons */
         .section-container {
             display: flex;
             justify-content: space-around;
@@ -67,24 +95,19 @@
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
             cursor: pointer;
             transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            text-decoration: none; /* Remove underline from links */
+            color: inherit;
         }
 
         .section-icon:hover {
             background-color: #b87333; /* Copper orange hover effect */
-            transform: scale(1.1) rotate(10deg); /* Zoom and rotate on hover */
+            transform: scale(1.1); /* Zoom effect on hover */
             color: white; /* Change text and icon color */
-        }
-
-        .section-icon p {
-            margin: 0;
-            font-size: 16px;
-            font-weight: bold;
         }
 
         .section-icon i {
             font-size: 36px;
             color: #b87333; /* Copper orange icon color */
-            margin-bottom: 10px;
             transition: color 0.2s ease-in-out;
         }
 
@@ -92,13 +115,10 @@
             color: white; /* Icon turns white on hover */
         }
 
-        footer {
-            background-color: #000000; /* Black footer */
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        .section-icon p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
         }
     </style>
     <!-- Add Font Awesome for Icons -->
@@ -124,26 +144,52 @@
 
     <!-- Section Icons -->
     <div class="section-container">
-        <div class="section-icon" id="dashboard-icon">
+        <a class="section-icon" href="#dashboard">
             <i class="fas fa-chart-line"></i>
             <p>Dashboard</p>
-        </div>
-        <div class="section-icon" id="workout-icon">
+        </a>
+        <a class="section-icon" href="#workout-tracker">
             <i class="fas fa-dumbbell"></i>
             <p>Workouts</p>
-        </div>
-        <div class="section-icon" id="diary-icon">
+        </a>
+        <a class="section-icon" href="#progress-diary">
             <i class="fas fa-heart"></i>
             <p>Diary</p>
-        </div>
-        <div class="section-icon" id="islamic-icon">
+        </a>
+        <a class="section-icon" href="#islamic-tools">
             <i class="fas fa-mosque"></i>
             <p>Islamic Tools</p>
-        </div>
-        <div class="section-icon" id="assistant-icon">
+        </a>
+        <a class="section-icon" href="#assistant">
             <i class="fas fa-headset"></i>
             <p>I'm Here</p>
-        </div>
+        </a>
+    </div>
+
+    <!-- Sections -->
+    <div id="dashboard" class="section">
+        <h2>Dashboard</h2>
+        <p>Track your progress here!</p>
+    </div>
+
+    <div id="workout-tracker" class="section">
+        <h2>Workout Tracker</h2>
+        <p>Log and complete your workouts!</p>
+    </div>
+
+    <div id="progress-diary" class="section">
+        <h2>Progress Diary</h2>
+        <p>Log your meals, reflections, and progress photos here.</p>
+    </div>
+
+    <div id="islamic-tools" class="section">
+        <h2>Islamic Tools</h2>
+        <p>Stay connected to your faith with prayer times and Qibla direction.</p>
+    </div>
+
+    <div id="assistant" class="section">
+        <h2>I'm Here</h2>
+        <p>Your virtual assistant for guidance and motivation.</p>
     </div>
 
     <!-- Footer Section -->
