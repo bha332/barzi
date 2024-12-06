@@ -15,7 +15,7 @@
         }
 
         .header {
-            background-color: #e63946; /* Bold red header */
+            background-color: #b87333; /* Copper orange */
             padding: 20px;
             text-align: center;
         }
@@ -44,14 +44,40 @@
         }
 
         .navbar ul li a:hover {
-            color: #e63946;
+            color: #b87333; /* Copper orange hover effect */
         }
 
-        .section {
-            padding: 20px;
+        .section-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
             margin: 20px;
-            background-color: #2c2c2c; /* Dark gray section background */
-            border-radius: 10px;
+        }
+
+        .section-icon {
+            background-color: #2c2c2c; /* Dark gray for sections */
+            border-radius: 50%; /* Make it circular */
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        .section-icon:hover {
+            background-color: #b87333; /* Copper orange hover effect */
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+        .section-icon p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
         }
 
         footer {
@@ -82,35 +108,24 @@
         </ul>
     </nav>
 
-    <!-- Dashboard Section -->
-    <section id="dashboard" class="section">
-        <h2>Dashboard</h2>
-        <p>Track your progress here!</p>
-    </section>
-
-    <!-- Workout Tracker Section -->
-    <section id="workout-tracker" class="section">
-        <h2>Workout Tracker</h2>
-        <p>Log and complete your workouts!</p>
-    </section>
-
-    <!-- Progress Diary Section -->
-    <section id="progress-diary" class="section">
-        <h2>Progress Diary</h2>
-        <p>Keep track of your meals, progress photos, and reflections.</p>
-    </section>
-
-    <!-- Islamic Tools Section -->
-    <section id="islamic-tools" class="section">
-        <h2>Islamic Tools</h2>
-        <p>Stay connected to your faith with prayer times and Qibla direction.</p>
-    </section>
-
-    <!-- Assistant Section -->
-    <section id="assistant" class="section">
-        <h2>Personal Assistant</h2>
-        <p>Your virtual companion for fitness, motivation, and faith.</p>
-    </section>
+    <!-- Section Icons -->
+    <div class="section-container">
+        <div class="section-icon" id="dashboard-icon">
+            <p>Dashboard</p>
+        </div>
+        <div class="section-icon" id="workout-icon">
+            <p>Workouts</p>
+        </div>
+        <div class="section-icon" id="diary-icon">
+            <p>Diary</p>
+        </div>
+        <div class="section-icon" id="islamic-icon">
+            <p>Islamic Tools</p>
+        </div>
+        <div class="section-icon" id="assistant-icon">
+            <p>Assistant</p>
+        </div>
+    </div>
 
     <!-- Footer Section -->
     <footer>
@@ -118,4 +133,3 @@
     </footer>
 </body>
 </html>
-
