@@ -12,6 +12,7 @@
             padding: 0;
             background-color: #000000; /* Black background */
             color: #ffffff; /* White text for contrast */
+            scroll-behavior: smooth; /* Enable smooth scrolling */
         }
 
         .header {
@@ -59,10 +60,44 @@
             justify-content: center;
             background-color: #1a1a1a; /* Dark gray for sections */
             border-bottom: 2px solid #b87333; /* Separator effect */
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Slightly shifted down */
+            animation: fadeIn 1s ease-out forwards; /* Animation applied */
         }
 
         .section:nth-child(even) {
             background-color: #000000; /* Alternate black sections */
+        }
+
+        .section:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .section:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .section:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .section:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .section:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         footer {
