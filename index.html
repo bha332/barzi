@@ -62,40 +62,65 @@
             border-bottom: 2px solid #b87333; /* Separator effect */
         }
 
-        .progress-section {
+        footer {
+            background-color: #000000; /* Black footer */
             text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
-        .circular-chart {
+        .section-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        .section-icon {
+            background-color: #000000; /* Black section background */
+            border-radius: 50%; /* Make it circular */
             width: 150px;
             height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            text-decoration: none; /* Remove underline from links */
+            color: inherit;
         }
 
-        .circle-bg {
-            fill: none;
-            stroke: #ccc;
-            stroke-width: 3.8;
+        .section-icon:hover {
+            background-color: #b87333; /* Copper orange hover effect */
+            transform: scale(1.1); /* Zoom effect on hover */
+            color: white; /* Change text and icon color */
         }
 
-        .circle {
-            fill: none;
-            stroke: #b87333;
-            stroke-width: 3.8;
-            stroke-dasharray: 50, 100;
-            stroke-linecap: round;
-            animation: progress 1s ease-out forwards;
+        .section-icon i {
+            font-size: 36px;
+            color: #b87333; /* Copper orange icon color */
         }
 
-        @keyframes progress {
-            from {
-                stroke-dasharray: 0, 100;
-            }
-            to {
-                stroke-dasharray: 50, 100;
-            }
+        .section-icon:hover i {
+            color: white; /* Icon turns white on hover */
+        }
+
+        .section-icon p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .prayer-times {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
-    <!-- Add Font Awesome for Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -116,42 +141,57 @@
         </ul>
     </nav>
 
+    <!-- Section Icons -->
+    <div class="section-container">
+        <a class="section-icon" href="#dashboard">
+            <i class="fas fa-chart-line"></i>
+            <p>Dashboard</p>
+        </a>
+        <a class="section-icon" href="#workout-tracker">
+            <i class="fas fa-dumbbell"></i>
+            <p>Workouts</p>
+        </a>
+        <a class="section-icon" href="#progress-diary">
+            <i class="fas fa-heart"></i>
+            <p>Diary</p>
+        </a>
+        <a class="section-icon" href="#islamic-tools">
+            <i class="fas fa-mosque"></i>
+            <p>Islamic Tools</p>
+        </a>
+        <a class="section-icon" href="#assistant">
+            <i class="fas fa-headset"></i>
+            <p>I'm Here</p>
+        </a>
+    </div>
+
     <!-- Dashboard Section -->
     <div id="dashboard" class="section">
         <h2>Dashboard</h2>
-        <div class="progress-section">
-            <svg viewBox="0 0 36 36" class="circular-chart">
-                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 1 0 0.00001 0"></path>
-                <path class="circle" d="M18 2.0845 a 15.9155 15.9155 0 1 0 0.00001 0"></path>
-            </svg>
-            <p>50% Progress</p>
-        </div>
+        <p>Track your progress here!</p>
     </div>
 
     <!-- Workout Tracker Section -->
     <div id="workout-tracker" class="section">
         <h2>Workout Tracker</h2>
-        <form id="workout-log">
-            <label for="exercise">Exercise:</label>
-            <input type="text" id="exercise" name="exercise">
-            <label for="sets">Sets:</label>
-            <input type="number" id="sets" name="sets">
-            <label for="reps">Reps:</label>
-            <input type="number" id="reps" name="reps">
-            <label for="weight">Weight:</label>
-            <input type="number" id="weight" name="weight">
-            <button type="submit">Log Workout</button>
-        </form>
+        <p>Log and complete your workouts!</p>
+    </div>
+
+    <!-- Progress Diary Section -->
+    <div id="progress-diary" class="section">
+        <h2>Progress Diary</h2>
+        <p>Log your meals, reflections, and progress photos here.</p>
     </div>
 
     <!-- Islamic Tools Section -->
     <div id="islamic-tools" class="section">
         <h2>Islamic Tools</h2>
-        <div id="prayer-times">
-            <p>Fetching prayer times...</p>
+        <div class="prayer-times">
+            <p>Prayer Times:</p>
+            <p id="prayer-times">Loading...</p>
         </div>
         <script>
-            fetch('https://api.aladhan.com/v1/timingsByCity?city=YourCity&country=YourCountry&method=2')
+            fetch('https://api.aladhan.com/v1/timingsByCity?city=Harrisonburg&Country=USA&method=2')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('prayer-times').innerHTML = `
@@ -160,6 +200,9 @@
                         Asr: ${data.data.timings.Asr}<br>
                         Maghrib: ${data.data.timings.Maghrib}<br>
                         Isha: ${data.data.timings.Isha}`;
+                })
+                .catch(() => {
+                    document.getElementById('prayer-times').innerText = "Could not fetch prayer times.";
                 });
         </script>
     </div>
